@@ -10,7 +10,8 @@ const passport = require('passport');
 const localStrategy = require('passport-local');
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 const passportLocalMongoose = require('passport-local-mongoose');
-
+const mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/grocery_app_dev';
+mongoose.connect(mongoUri);
 
 // require db
 require('./db/db');
